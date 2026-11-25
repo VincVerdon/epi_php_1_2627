@@ -1,56 +1,43 @@
 <?php
 namespace model;
-
-
 /**
- * Classe métier représentant les fabricants (manufacturers)
- * @author V. Verdon
- * @version 20231115
- */
-class Manufacturer implements \JsonSerializable {
+ * Classe métier représentant les types (type)
+ * @author R. Lapadu-Hargues M. Ferlet
+ * @version 20261125
+ */ 
+class Type implements \JsonSerializable {
     
     private ?int $id;
     private string $name;
-    private ?string $shortName;
     
 
-    public function __construct(string $name=null, string $short_name=null, int $id=null) {
+    public function __construct(string $name=null, int $id=null) {
         $this->id = $id;
         $this->name = $name;
-        $this->shortName = $short_name;
     }
-    
-    
+
+
     /**
-     * ToString d'un manufacturer
+     * ToString d'un type
      * @return string
      */
     public function __toString() {
-        return 'name = ' . $this->name . ' ; short name = ' . $this->shortName;
+        return 'name = ' . $this->name;
     }
-    
+
+        
     /**
-     * Fournit la représentation JSON d'un manufacturer
+     * Fournit la représentation JSON d'un type
      * @see 'JsonSerializable::jsonSerialize()
      */
     public function jsonSerialize() {
         $res = array(
             'id' => $this->id,
             'name' => $this->name,
-            'short_name' => $this->shortName
         );
         return $res;
     }
-    
-    
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-    
+
     /**
      * @param int $id
      */
@@ -59,22 +46,6 @@ class Manufacturer implements \JsonSerializable {
         $this->id = $id;
     }
     
-    
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getShortName()
-    {
-        return $this->shortName;
-    }
 
     /**
      * @param string $name
@@ -84,13 +55,5 @@ class Manufacturer implements \JsonSerializable {
         $this->name = $name;
     }
 
-    /**
-     * @param string $shortName
-     */
-    public function setShortName($shortName)
-    {
-        $this->shortName = $shortName;
-    }
 
 }
-
