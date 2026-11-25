@@ -45,7 +45,22 @@ class Type implements \JsonSerializable {
     {
         $this->id = $id;
     }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
     
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
     /**
      * @param string $name
