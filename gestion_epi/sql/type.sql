@@ -1,11 +1,4 @@
--- Jeu d'essai
-
-INSERT INTO type (name) VALUES
-('Corde'),
-('Mousqueton'),
-('Baudrier'),
-('Casque'),
-('Sangle'),
-('Descendeur'),
-('Dégaine'),
-('Ancrage');
+CREATE TABLE type (
+	id int PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(40) NOT NULL
+);
