@@ -18,7 +18,7 @@ class TypeDao extends Dao {
      */
     public function readAll() {
         $liste = array();
-        $req='SELECT id, name FROM Type';
+        $req='SELECT id, name FROM type';
         $res = $this->connect->query($req);
         while($ligne=$res->fetch(PDO::FETCH_ASSOC)) {
             $liste[]=new Type($ligne['name'], $ligne['id']);
