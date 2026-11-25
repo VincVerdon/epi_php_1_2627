@@ -33,7 +33,7 @@ class TypeDao extends Dao {
      * @return NULL|\model\Type
      */
     public function read(int $id) {
-		$manufac = null;
+		$type = null;
 		$req ='SELECT id, name';
 		$req .= ' FROM Type';
 		$req .= ' WHERE id = :id';
@@ -41,9 +41,9 @@ class TypeDao extends Dao {
 		$statement = $this->connect->prepare($req);
 		$statement->execute(array(':id' => $id));
 		if ($ligne = $statement->fetch(PDO::FETCH_ASSOC)) {
-		    $manufac = new Type($ligne['name'], $ligne['id']);
+		    $type = new Type($ligne['name'], $ligne['id']);
 		}
-		return $manufac;
+		return $type;
 	}
 	
 	

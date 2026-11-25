@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 /**
  * index.php utilisé uniquement par l'appli Web
  * @author V. Verdon
